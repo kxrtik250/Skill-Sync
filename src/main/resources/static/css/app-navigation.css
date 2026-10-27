@@ -1,0 +1,18 @@
+.app aside{position:sticky;top:0;height:100vh;min-height:100vh;flex:0 0 250px;overflow-y:auto;overscroll-behavior:contain}
+.app aside .brand{display:block;color:#fff;text-decoration:none;margin-bottom:28px;flex:none}
+.app aside nav{display:grid;gap:4px}
+.app aside nav a{font-size:13px;padding:10px 12px}
+.side-foot{padding-top:18px}
+.side-foot .nav-user{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.side-foot form{grid-column:1/3}
+.app aside nav a:focus-visible,.side-foot button:focus-visible{outline:2px solid #aebdff;outline-offset:2px}
+@media(max-width:850px){
+  .app{display:block}
+  .app aside{position:sticky;top:0;z-index:20;width:100%;height:auto;min-height:0;padding:10px 14px;display:flex;flex-direction:row;align-items:center;gap:14px;overflow:visible}
+  .app aside .brand{margin:0;white-space:nowrap}
+  .app aside nav{display:flex;flex:1;gap:4px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;min-width:0}
+  .app aside nav a{white-space:nowrap;flex:none;padding:9px 11px}
+  .app aside .side-foot{display:none}
+  .dash{padding:26px 5%}
+}
+@media(max-width:520px){.app aside{align-items:flex-start;flex-direction:column;gap:8px;padding:10px 12px}.app aside nav{width:100%}.dash{padding:22px 14px}}

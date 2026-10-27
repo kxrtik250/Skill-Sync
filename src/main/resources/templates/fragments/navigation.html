@@ -1,0 +1,27 @@
+<aside th:fragment="navigation">
+  <a class="brand" href="/dashboard">SKILLSYNC</a>
+  <nav aria-label="Main navigation">
+    <a href="/dashboard">Overview</a>
+    <a href="/skills">Skills profile</a>
+    <a href="/career-paths">Career paths</a>
+    <a href="/career-comparison">Compare careers</a>
+    <a href="/career-progression">Progression</a>
+    <a href="/roadmap">Learning roadmap</a>
+    <a href="/projects">Projects</a>
+    <a href="/portfolio">Portfolio</a>
+    <a href="/resume-intelligence">Resume review</a>
+    <a href="/job-matcher">Job matcher</a>
+    <a href="/industry-intelligence">Industry insights</a>
+    <a href="/profile">Profile settings</a>
+    <a th:if="${user.accountRole == 'ADMIN'}" href="/admin/dashboard">Admin</a>
+  </nav>
+  <div class="side-foot">
+    <span class="avatar" th:text="${#strings.substring(user.fullName,0,1)}">S</span>
+    <span class="nav-user" th:text="${user.fullName}">Student</span>
+    <form method="post" th:action="@{/logout}">
+      <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+      <button type="submit">Sign out</button>
+    </form>
+  </div>
+  <script src="/js/app-navigation.js" defer></script>
+</aside>
